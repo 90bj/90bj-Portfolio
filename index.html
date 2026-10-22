@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>90bj/portfolio</title>
+<meta name="description" content="Game-ready 3D assets for Roblox: hair, weapons, outfits and accessories. Portfolio and commissions.">
+<meta name="theme-color" content="#0b0c10">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=5">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+
+<!-- Fixed WebGL canvas: one 3D scene follows the page as you scroll -->
+<canvas id="gl" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Home"><span class="brand-mark"></span><span data-brand>90bj/portfolio</span></a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="#showcase" data-spy>3D Showcase</a>
+    <a href="#gallery" data-spy>Gallery</a>
+    <a href="#process" data-spy>Process</a>
+    <a href="#services" data-spy>Services</a>
+    <a class="nav-cta" href="#contact">Commission me</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-copy">
+      <p class="kicker reveal" style="--i:0">Roblox UGC &middot; 3D asset studio</p>
+      <h1 class="hero-title" aria-label="Game-ready 3D assets, crafted for Roblox.">
+        <span class="line"><span class="word" style="--i:0">Game&#8209;ready</span></span>
+        <span class="line"><span class="word" style="--i:1">3D&nbsp;assets,</span></span>
+        <span class="line"><span class="word accent" style="--i:2">crafted for</span></span>
+        <span class="line"><span class="word" style="--i:3">Roblox.</span></span>
+      </h1>
+      <p class="byline reveal" style="--i:3.5">by <b>90bj</b></p>
+      <p class="lede reveal" style="--i:4">Hair, weapons, outfits and accessories &mdash; sculpted, optimized and tested in Roblox Studio before they ever reach a player.</p>
+      <div class="hero-actions reveal" style="--i:5">
+        <a class="btn btn-primary" href="#showcase">Explore the work</a>
+        <a class="btn btn-ghost" href="#gallery">See the gallery</a>
+      </div>
+    </div>
+    <div class="stage" id="hero-stage" data-stage="hero"></div>
+    <a class="scroll-cue" href="#showcase" aria-label="Scroll to showcase"><span></span></a>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Hair</span><i></i><span>Weapons</span><i></i><span>Outfits</span><i></i><span>Accessories</span><i></i><span>Layered clothing</span><i></i><span>Roblox ready</span><i></i>
+      <span>Hair</span><i></i><span>Weapons</span><i></i><span>Outfits</span><i></i><span>Accessories</span><i></i><span>Layered clothing</span><i></i><span>Roblox ready</span><i></i>
+    </div>
+  </div>
+
+  <!-- 3D SHOWCASE -->
+  <section class="showcase" id="showcase">
+    <div class="section-head">
+      <p class="kicker reveal">01 &mdash; Showcase</p>
+      <h2 class="reveal" style="--i:1">Pick a piece. <span class="accent">Spin it.</span></h2>
+    </div>
+    <div class="showcase-grid">
+      <ul class="tabs" id="tabs" role="tablist" aria-label="Choose a 3D model">
+        <li><button role="tab" aria-selected="true"><span class="num">01</span><span class="t"><b>Demon Blade</b><small>Weapon &middot; horned jade sabre</small></span></button></li>
+        <li><button role="tab" aria-selected="false"><span class="num">02</span><span class="t"><b>Akuma Hair</b><small>Hair &middot; male, spiked and layered</small></span></button></li>
+        <li><button role="tab" aria-selected="false"><span class="num">03</span><span class="t"><b>Brown Gold Hair</b><small>Hair &middot; female, golden accessories</small></span></button></li>
+        <li><button role="tab" aria-selected="false"><span class="num">04</span><span class="t"><b>Mini Chain Chibi</b><small>UGC &middot; chibi chain charm</small></span></button></li>
+        <li><button role="tab" aria-selected="false"><span class="num">05</span><span class="t"><b>Green Crystal Bow</b><small>Weapon &middot; shard-winged bow</small></span></button></li>
+        <li><button role="tab" aria-selected="false"><span class="num">06</span><span class="t"><b>Moss Butterfly Maiden</b><small>Outfit &middot; full set</small></span></button></li>
+      </ul>
+      <div class="stage stage-main" id="stage" data-stage="show" aria-label="3D viewer. Drag to rotate.">
+        <span class="loader" id="loader" hidden></span>
+        <span class="drag-hint"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3M18 3v4h-4M6 21v-4h4"/></svg>Drag to rotate</span>
+      </div>    </div>
+    <p class="note reveal">My real models, rendered live. Full renders in the gallery below.</p>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="section-head">
+      <p class="kicker reveal">02 &mdash; Selected work</p>
+      <h2 class="reveal" style="--i:1">Made for <span class="accent">Roblox.</span></h2>
+    </div>
+    <div class="filters reveal" id="filters" role="group" aria-label="Filter gallery">
+      <button class="chip" aria-pressed="true" data-f="all">All</button>
+      <button class="chip" aria-pressed="false" data-f="hair">Hair</button>
+      <button class="chip" aria-pressed="false" data-f="weapon">Weapons</button>
+      <button class="chip" aria-pressed="false" data-f="outfit">Outfits</button>
+      <button class="chip" aria-pressed="false" data-f="accessory">Accessories</button>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process" id="process">
+    <div class="section-head">
+      <p class="kicker reveal">03 &mdash; How it works</p>
+      <h2 class="reveal" style="--i:1">From sketch to <span class="accent">in-game.</span></h2>
+    </div>
+    <ol class="steps" id="steps">
+      <li class="step reveal"><span class="step-n">01</span><h3>Concept</h3><p>We lock the brief: silhouette, theme, colour and where it sits on the avatar.</p></li>
+      <li class="step reveal" style="--i:1"><span class="step-n">02</span><h3>Sculpt &amp; model</h3><p>High-detail sculpt in Blender, then a clean low-poly build that holds the shape.</p></li>
+      <li class="step reveal" style="--i:2"><span class="step-n">03</span><h3>Bake &amp; texture</h3><p>Normals, colour and gradients baked down so it reads as rich at tiny sizes.</p></li>
+      <li class="step reveal" style="--i:3"><span class="step-n">04</span><h3>Test &amp; ship</h3><p>Checked in Roblox Studio against limits, then delivered upload-ready.</p></li>
+    </ol>
+    <div class="rail" aria-hidden="true"><span id="rail-fill"></span></div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-head">
+      <p class="kicker reveal">04 &mdash; What I offer</p>
+      <h2 class="reveal" style="--i:1">Commissions <span class="accent">open.</span></h2>
+    </div>
+    <div class="cards">
+      <article class="card reveal"><h3>Hair &amp; accessories</h3><p>Stylised hair, hairpieces, keychains and wearable add-ons.</p></article>
+      <article class="card reveal" style="--i:1"><h3>Weapons &amp; props</h3><p>Swords, bows, polearms and hero props with a strong silhouette.</p></article>
+      <article class="card reveal" style="--i:2"><h3>Outfits &amp; layered clothing</h3><p>Matching sets with accessories, built to fit Roblox bodies.</p></article>
+      <article class="card reveal" style="--i:3"><h3>Optimization</h3><p>Retopology, baking and Studio testing to keep assets within limits.</p></article>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <p class="kicker reveal">05 &mdash; Let&rsquo;s build</p>
+    <h2 class="contact-title reveal" style="--i:1">Have an asset <span class="accent">in mind?</span></h2>
+    <a class="btn btn-primary btn-xl magnetic" id="mail" href="mailto:mustafa.b.kanakri@gmail.com">mustafa.b.kanakri@gmail.com</a>
+    <ul class="socials">
+      <li><a href="https://discord.com/users/1204688855027032075" target="_blank" rel="noopener" aria-label="Discord">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.2.5a18 18 0 0 0-6.4 0L8.6 3a19.8 19.8 0 0 0-4.9 1.4C.6 9 0 13.5.3 18a20 20 0 0 0 6 3l1.3-2.1c-.7-.3-1.4-.6-2-1l.5-.4a14.2 14.2 0 0 0 12.2 0l.5.4c-.6.4-1.300.7-2 1L18 21a20 20 0 0 0 6-3c.4-5.200-.7-9.700-3.700-13.600ZM8.500 15.300c-1.200 0-2.100-1.100-2.100-2.400s.9-2.400 2.100-2.400 2.100 1.100 2.100 2.400-.9 2.400-2.100 2.400Zm7 0c-1.200 0-2.100-1.100-2.100-2.400s.9-2.400 2.100-2.400 2.100 1.100 2.100 2.400-.9 2.400-2.100 2.400Z"/></svg>Discord</a></li>
+      <li><a href="https://www.instagram.com/90b.j/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.200c3.200 0 3.600 0 4.800.1 3.300.1 4.800 1.700 4.900 4.900.1 1.300.1 1.600.1 4.800s0 3.600-.1 4.800c-.1 3.200-1.700 4.800-4.900 4.900-1.300.1-1.600.1-4.800.1s-3.600 0-4.800-.1c-3.300-.1-4.800-1.700-4.900-4.900C2.200 15.600 2.200 15.200 2.200 12s0-3.600.1-4.800C2.400 3.900 4 2.400 7.200 2.300 8.400 2.200 8.800 2.200 12 2.200ZM12 0C8.700 0 8.300 0 7.100.1 2.700.3.300 2.700.1 7.100 0 8.300 0 8.700 0 12s0 3.700.1 4.900c.2 4.400 2.600 6.800 7 7C8.300 24 8.700 24 12 24s3.700 0 4.900-.1c4.400-.2 6.800-2.600 7-7 .1-1.200.1-1.600.1-4.900s0-3.700-.1-4.900c-.2-4.400-2.600-6.800-7-7C15.700 0 15.300 0 12 0Zm0 5.800a6.200 6.200 0 1 0 0 12.400 6.200 6.200 0 0 0 0-12.400ZM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm6.400-11.800a1.400 1.400 0 1 0 0 2.900 1.400 1.400 0 0 0 0-2.900Z"/></svg>Instagram</a></li>
+      <li><a href="https://www.roblox.com/users/1816809075/profile" target="_blank" rel="noopener" aria-label="Roblox">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.200 0 0 18.800 18.800 24 24 5.200 5.200 0Zm8.500 15.100-4.800-1.300 1.300-4.800 4.800 1.300-1.300 4.800Z"/></svg>Roblox</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="footer"><span>&copy; <span id="year"></span> <span data-brand>90bj/portfolio</span></span><a href="#top">Back to top</a></footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" hidden>
+  <div class="lb-backdrop" data-close></div>
+  <figure class="lb-panel" role="dialog" aria-modal="true" aria-label="Image preview">
+    <button class="lb-close" data-close aria-label="Close">&times;</button>
+    <img id="lb-img" alt="">
+    <figcaption id="lb-cap"></figcaption>
+  </figure>
+</div>
+
+<script type="module" src="main.js?v=6"></script>
+</body>
+</html>
