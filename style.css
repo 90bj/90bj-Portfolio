@@ -56,11 +56,9 @@ main, .footer { position: relative; z-index: 2; }
   mask-image: linear-gradient(to bottom, #000 70%, transparent);
 }
 .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 600; font-size: 22px; letter-spacing: 0.01em; }
-.brand-mark {
-  width: 14px; height: 14px; background: var(--accent);
-  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-  transition: background-color 400ms ease;
-}
+.brand-mark { width: 28px; height: 28px; display: block; flex: none; transition: transform 250ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) { .brand:hover .brand-mark { transform: rotate(90deg); } }
+.footer .brand-mark { width: 18px; height: 18px; }
 .nav-links { display: flex; align-items: center; gap: 28px; font-size: 14px; font-weight: 500; }
 .nav-links a[data-spy] { color: var(--muted); transition: color 150ms ease; position: relative; padding: 4px 0; }
 .nav-links a[data-spy]::after {

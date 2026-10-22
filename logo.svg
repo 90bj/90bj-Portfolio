@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="90bj">
+  <title>90bj</title>
+  <polygon points="32,3 61,32 32,61 3,32" fill="#9a82e6"/>
+  <polygon points="32,3 3,32 32,32" fill="#d9ccff"/>
+  <polygon points="32,3 61,32 32,32" fill="#b9a2f2"/>
+  <polygon points="3,32 32,61 32,32" fill="#8d73dc"/>
+  <polygon points="61,32 32,61 32,32" fill="#6f55c4"/>
+  <polygon points="32,3 61,32 32,61 3,32" fill="none" stroke="#efe9ff" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M32 14 L35 29 L50 32 L35 35 L32 50 L29 35 L14 32 L29 29 Z" fill="#ffffff" fill-opacity="0.92"/>
+</svg>
